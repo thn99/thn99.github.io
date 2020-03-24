@@ -9,3 +9,6 @@
 body {
   text-align: center;
 }
+input.form-control {
+  margin-top: 5px;
+}
