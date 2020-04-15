@@ -63,3 +63,47 @@ function appendLink(){
   console.log(link.href)
 }
 
+function appendProduct(){
+  let tbodyLink = document.getElementById("productArea");
+  let prodId = document.getElementById("productId").value;
+  let prodName = document.getElementById("productName").value;
+  let prodPrice = Number(document.getElementById("productPrice").value);
+  let prodQuantity = Number(document.getElementById("productQuantity").value);
+  console.log(prodId, prodName, prodPrice, prodQuantity);
+  let product = document.createElement("a");
+  let column = document.createElement("tr");
+  let row = document.createElement("td");
+  product.innerText = prodId + " | " + prodName + " | " + prodPrice + " | " + prodQuantity  + '\n';
+  row.scope = 'row';
+  row.append(product);
+  column.append(row);
+  tbodyLink.append(column);
+  purchaseItems.push({
+    id: prodId,
+    name: prodName,
+    price: prodPrice,
+    quantity: prodQuantity
+  });
+}
+
+function purchase(){
+  window.dataLayer = window.dataLayer || [];
+  let transactionId = document.getElementById("transactionId").innerText;
+  let revenue = purchaseItems.reduce((acc, prod) =>  acc += prod.price * prod.quantity, 0);
+  dataLayer.push({
+    event: 'purchaseReady',
+    ecommerce: {
+      purchase: {
+        actionField: {
+          id: transactionId,
+          revenue: revenue,
+        },
+        products: purchaseItems
+      }
+    }
+  });
+}
+
+function transactionId(){
+  document.getElementById("transactionId").textContent += Date.now();
+}

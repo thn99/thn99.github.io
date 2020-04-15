@@ -12,3 +12,12 @@ body {
 input.form-control {
   margin-top: 5px;
 }
+
+#transactionTxt {
+  font-size: 30px;
+}
+
+#transactionId {
+  font-size: 20px;
+
+}
