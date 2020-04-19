@@ -12,6 +12,39 @@
   f.parentNode.insertBefore(j, f);
 })(window, document, "script", "dataLayer", "GTM-N3G5W8J");
 
+/*
+
+(function(){
+  let firstLink = document.createElement("link");
+  let firstScript = document.createElement("script");
+  let secondScript = document.createElement("script");
+  let thirdScript = document.createElement("script");
+
+  firstLink.href = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css";
+  firstLink.integrity = "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh";
+  firstLink.crossOrigin = "anonymous";
+
+  firstScript.src = "https://code.jquery.com/jquery-3.3.1.slim.min.js";
+  firstScript.integrity = "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo";
+  firstScript.crossOrigin = "anonymous";
+
+  secondScript.src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js";
+  secondScript.integrity = "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1";
+  secondScript.crossOrigin = "anonymous";
+
+  thirdScript.src = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js";
+  thirdScript.integrity = "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM";
+  thirdScript.crossOrigin = "anonymous";
+
+  document.body.appendChild(firstLink);
+  document.body.appendChild(firstScript);
+  document.body.appendChild(secondScript);
+  document.body.appendChild(thirdScript);
+})();
+
+*/
+
+
 /**
  * GTAG Code
  *  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
@@ -107,11 +140,3 @@ function purchase(){
 function transactionId(){
   document.getElementById("transactionId").textContent += Date.now();
 }
-
-/*
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-*/
