@@ -137,7 +137,7 @@ function purchase(){
 }
 
 function transactionId(){
-  document.getElementById("transactionId").textContent += Date.now();
+  document.getElementById("transactionId").textContent = Date.now();
 }
 
 let normal = {
