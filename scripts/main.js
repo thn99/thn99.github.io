@@ -101,15 +101,24 @@ function appendProduct(){
   let prodName = document.getElementById("productName").value;
   let prodPrice = Number(document.getElementById("productPrice").value);
   let prodQuantity = Number(document.getElementById("productQuantity").value);
-  console.log(prodId, prodName, prodPrice, prodQuantity);
-  let product = document.createElement("a");
+  
+  let productId = document.createElement("td");
+  let productName = document.createElement("td");
+  let productPrice = document.createElement("td");
+  let productQuantity = document.createElement("td");
   let column = document.createElement("tr");
-  let row = document.createElement("td");
-  product.innerText = prodId + " | " + prodName + " | " + prodPrice + " | " + prodQuantity  + '\n';
-  row.scope = 'row';
-  row.append(product);
-  column.append(row);
+
+  productId.innerText = prodId;
+  productName.innerText = prodName;
+  productPrice.innerText = prodPrice;
+  productQuantity.innerText = prodQuantity;
+
+  column.append(productId);
+  column.append(productName);
+  column.append(productPrice);
+  column.append(productQuantity);
   tbodyLink.append(column);
+  
   purchaseItems.push({
     id: prodId,
     name: prodName,
@@ -134,9 +143,11 @@ function purchase(){
       }
     }
   });
+  purchaseItems = [];
+  createTransactionId();
 }
 
-function transactionId(){
+function createTransactionId(){
   document.getElementById("transactionId").textContent = Date.now();
 }
 

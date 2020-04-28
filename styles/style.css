@@ -22,4 +22,11 @@ input.form-control {
 
 .table {
   text-align-last: center;
+  border-collapse: collapse;
+  
+}
+
+th, td {
+  border-bottom: 1px solid #ddd;
+  padding: 5px 10px;
 }
