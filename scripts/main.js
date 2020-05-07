@@ -95,7 +95,7 @@ function appendLink(){
   console.log(link.href)
 }
 
-function appendProduct(){
+function addToCart(){
   let tbodyLink = document.getElementById("productArea");
   let prodId = document.getElementById("productId").value;
   let prodName = document.getElementById("productName").value;
@@ -119,6 +119,13 @@ function appendProduct(){
   column.append(productQuantity);
   tbodyLink.append(column);
   
+  dataLayer.push({
+    event: 'Add To Cart',
+    id: prodId,
+    name: prodName,
+    price: prodPrice,
+    quantity: prodQuantity
+  });
   purchaseItems.push({
     id: prodId,
     name: prodName,
