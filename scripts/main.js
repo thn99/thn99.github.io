@@ -108,30 +108,32 @@ function addToCart(){
   let productQuantity = document.createElement("td");
   let column = document.createElement("tr");
 
-  productId.innerText = prodId;
-  productName.innerText = prodName;
-  productPrice.innerText = prodPrice;
-  productQuantity.innerText = prodQuantity;
+  if(prodId && prodPrice && prodName && prodQuantity){
+    productId.innerText = prodId;
+    productName.innerText = prodName;
+    productPrice.innerText = prodPrice;
+    productQuantity.innerText = prodQuantity;
 
-  column.append(productId);
-  column.append(productName);
-  column.append(productPrice);
-  column.append(productQuantity);
-  tbodyLink.append(column);
-  
-  dataLayer.push({
-    event: 'Add To Cart',
-    id: prodId,
-    name: prodName,
-    price: prodPrice,
-    quantity: prodQuantity
-  });
-  purchaseItems.push({
-    id: prodId,
-    name: prodName,
-    price: prodPrice,
-    quantity: prodQuantity
-  });
+    column.append(productId);
+    column.append(productName);
+    column.append(productPrice);
+    column.append(productQuantity);
+    tbodyLink.append(column);
+    
+    dataLayer.push({
+      event: 'Add To Cart',
+      id: prodId,
+      name: prodName,
+      price: prodPrice,
+      quantity: prodQuantity
+    });
+    purchaseItems.push({
+      id: prodId,
+      name: prodName,
+      price: prodPrice,
+      quantity: prodQuantity
+    });
+  }
 }
 
 function purchase(){
