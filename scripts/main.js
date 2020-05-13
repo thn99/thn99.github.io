@@ -138,20 +138,23 @@ function purchase(){
   window.dataLayer = window.dataLayer || [];
   let transactionId = document.getElementById("transactionId").innerText;
   let revenue = purchaseItems.reduce((acc, prod) =>  acc += prod.price * prod.quantity, 0);
-  dataLayer.push({
-    event: 'purchaseReady',
-    ecommerce: {
-      purchase: {
-        actionField: {
-          id: transactionId,
-          revenue: revenue,
-        },
-        products: purchaseItems
+  if(purchaseItems.length > 0){
+    dataLayer.push({
+      event: 'purchaseReady',
+      ecommerce: {
+        purchase: {
+          actionField: {
+            id: transactionId,
+            revenue: revenue,
+          },
+          products: purchaseItems
+        }
       }
-    }
-  });
+    });
+  }
   purchaseItems = [];
-  createTransactionId();
+  //createTransactionId();
+  window.location.reload();
 }
 
 function createTransactionId(){
