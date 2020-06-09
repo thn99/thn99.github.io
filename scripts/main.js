@@ -470,3 +470,63 @@ function lerolero(obj) {
     randomItem(obj.tab3);
   document.getElementById("daily-reflection").innerText = '"' + sentence + '"';
 }
+
+function cpf() {
+  let allSum = 0,
+    firstLimit = 10,
+    secondLimit = 11;
+  const originalNumbers = {
+    n0: undefined,
+    n1: undefined,
+    n2: undefined,
+    n3: undefined,
+    n4: undefined,
+    n5: undefined,
+    n6: undefined,
+    n7: undefined,
+    n8: undefined,
+  };
+
+  function module(sum, divider) {
+    return Math.round(sum - Math.floor(sum / divider) * divider);
+  }
+
+  function sumAlgorithm(obj, sum, limit) {
+    Object.keys(obj).forEach((number) => {
+      if (obj[number] == undefined) obj[number] = Math.round(Math.random() * 9);
+      sum += obj[number] * limit;
+      limit--;
+    });
+    let digit = 11 - module(sum, 11);
+    digit >= 10 && (digit = 0);
+    return {
+      obj,
+      digit,
+      sum,
+    };
+  }
+  var firstCalc = sumAlgorithm(originalNumbers, allSum, firstLimit);
+  originalNumbers["n9"] = firstCalc.digit;
+
+  // Starting second digit algorithm
+
+  var secondCalc = sumAlgorithm(originalNumbers, allSum, secondLimit);
+  originalNumbers["n10"] = secondCalc.digit;
+
+  let finalCpf = "";
+  Object.keys(originalNumbers).forEach((number, idx) => {
+    finalCpf +=
+      idx == 2 || idx == 5
+        ? originalNumbers[number] + "."
+        : idx == 8
+        ? originalNumbers[number] + "-"
+        : originalNumbers[number];
+  });
+  console.log(finalCpf);
+  return finalCpf;
+}
+
+function createCpf() {
+  let cpfValue = cpf();
+  document.getElementById("cpf").value = cpfValue;
+}
