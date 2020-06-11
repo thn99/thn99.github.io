@@ -1,67 +1,73 @@
 <!DOCTYPE html>
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
   <title>
     Testing Area
   </title>
   <script>
     window.dataLayer = window.dataLayer || [];
-    dataLayer.push({event: 'teste', arr: [{obj1: 123, obj2: "abc"}]});
+    dataLayer.push({ event: "teste", arr: [{ obj1: 123, obj2: "abc" }] });
   </script>
   <script src="scripts/main.js"></script>
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
 
 <body>
   <!-- <h1>Utilizado por mim, configurado por Deus</h1> -->
-  <a id="daily-reflection" style="font-size: 18px">Lero Lero</a><br><br>
+  <a id="daily-reflection" style="font-size: 18px;">Lero Lero</a><br /><br />
   <button onclick="lerolero(normal)">Lero Lero Normal</button>
   <button onclick="lerolero(tech)">Lero Lero Tecnológico</button>
-  <br><br><br>
+  <br /><br /><br />
   <div>
     <a href="/conversion-area/">Área de conversões</a>
   </div>
-  <br>
+  <br />
   <div>
     <a href="/custom-conversions/">Área de conversões personalizadas</a>
   </div>
-  <br>
+  <br />
   <div>
     <a href="/testing-area/">Área de Testes</a>
   </div>
-  <br>
+  <br />
   <div>
     <a href="/forms-area/">Área de Formulários (work in progress)</a>
   </div>
-  <br>
+  <br />
   <div>
-    <a href="/data-layer-tests/">Área de testes de dataLayer (work in progress)</a>
+    <a href="/data-layer-tests/"
+      >Área de testes de dataLayer (work in progress)</a
+    >
   </div>
-  <br>
+  <br />
   <div>
-    <button type="button" id="navigate">Site do Inhame</a>
-    </div>
-    <script>
-      let btn = document.getElementById("navigate");
-      btn.addEventListener("click", function(){
-        window.location.href = "https://inhame.ga";
-      })
-    </script>
-  <div class="footer">
+    <button type="button" id="navigate">Site do Inhame</button>
+  </div>
+  <script>
+    let btn = document.getElementById("navigate");
+    btn.addEventListener("click", function () {
+      window.location.href = "https://inhame.ga";
+    });
+  </script>
+  <footer id="footer">
     <h2>Esse é um site de TESTES, favor não fuçar em nada</h2>
     <h3>a não ser que você esteja aqui para fazer testes</h3>
-    <p>
+    <h4>
       Feito por mim, assegurado por mim também
-    </p>
-    <p>
+    </h4>
+    <h4>
       É responsivo, de nada
-    </p>
+    </h4>
     <!-- <p>
       Ao entrar nesse site, você aceita o uso de cookies. Caso não aceite, eu
       não ligo.
     </p> -->
-  </div>
+  </footer>
 </body>
-<script>lerolero(normal)</script>
-</html>
+<script>
+  lerolero(normal);
+</script>
