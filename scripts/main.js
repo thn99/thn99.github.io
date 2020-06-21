@@ -530,3 +530,15 @@ function createCpf() {
   let cpfValue = cpf();
   document.getElementById("cpf").value = cpfValue;
 }
+
+function clickbait() {
+  var gifs = document.getElementsByClassName("clickbait");
+  gifs.forEach((img, index) => {
+    img.addEventListener("click", function () {
+      dataLayer.push({
+        event: "clickBait",
+        pos: index,
+      });
+    });
+  });
+}
