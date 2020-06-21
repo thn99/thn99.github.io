@@ -532,7 +532,7 @@ function createCpf() {
 }
 
 function clickbait() {
-  var gifs = document.getElementsByClassName("clickbait");
+  var gifs = Array.from(document.getElementsByClassName("clickbait"));
   gifs.forEach((img, index) => {
     img.addEventListener("click", function () {
       dataLayer.push({
