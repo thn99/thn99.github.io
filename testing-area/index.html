@@ -1,63 +1,94 @@
 <!DOCTYPE html>
-<title>Testing Area</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<script src="../scripts/main.js"></script>
-<link rel="stylesheet" href="../styles/style.css">
-
+<head>
+  <title>Testing Area</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+  <script src="../scripts/main.js"></script>
+  <link rel="stylesheet" href="../styles/style.css" />
 </head>
-  <body>
-    <div class="form-group d-flex justify-content-center">
-      <h1>Área de testes</h1>
+<body>
+  <div class="form-group d-flex justify-content-center">
+    <h1>Área de testes</h1>
+  </div>
+
+  <div class="container">
+    <div class="form-group">
+      <div class="col-md-6 offset-md-3">
+        <label> Add GTM: </label><br />
+        <input
+          type="text"
+          id="gtmId"
+          class="form-control"
+          placeholder="ID do GTM"
+        /><br />
+        <button
+          id="Added GTM"
+          class="insertThings btn btn-outline-primary"
+          type="button"
+          onclick="inject()"
+        >
+          Inject
+        </button>
+      </div>
     </div>
-    
-    <div class="container">
-      <div class="form-group">
-          <div class="col-md-6 offset-md-3">
-            <label> Add GTM: </label><br>
-            <input type="text" id="gtmId" class="form-control" placeholder="ID do GTM"/><br>
-            <button id="Added GTM" class="insertThings btn btn-outline-primary" type="button" onclick="inject()">Inject</button>  
-          </div>
-      </div>
-    
-      <div class="form-group">
-          <div class="col-md-6 offset-md-3">
-            <label> Inject script: </label><br>
-            <input type="text" id="scriptSrc" class="form-control" placeholder="URL"/>
-            <input type="text" id="scriptAsync" class="form-control" placeholder="Async: true | false" /><br>
-            <button type="button" class="insertThings btn btn-outline-success" id="Load Script" onclick="load()">Load</button>   
-          </div>
-      </div>
 
-       <div class="form-group">
-          <div class="col-md-6 offset-md-3">
-            <label> CPF: </label><br>
-            <input id="cpf" class="form-control" placeholder="000.000.000-00"/ maxlength="14">
-            <button type="button" class="insertThings btn btn-outline-success" id="Load Script" onclick="createCpf()">Generate</button>   
-          </div>
+    <div class="form-group">
+      <div class="col-md-6 offset-md-3">
+        <label> Inject script: </label><br />
+        <input
+          type="text"
+          id="scriptSrc"
+          class="form-control"
+          placeholder="URL"
+        />
+        <input
+          type="text"
+          id="scriptAsync"
+          class="form-control"
+          placeholder="Async: true | false"
+        /><br />
+        <button
+          type="button"
+          class="insertThings btn btn-outline-success"
+          id="Load Script"
+          onclick="load()"
+        >
+          Load
+        </button>
       </div>
-
-      <div class="form-group">
-        <div class="col-md-6 offset-md-3">
-          <label> Cross Domain Tester: </label><br>
-          <input type="text" id="url" class="form-control" placeholder="URL"><br>
-          <button type="button" class="insertThings btn btn-outline-warning" id="Insert Link" onclick="appendLink()">Insert Link</button>
-          <br><br>
-          <!--Tabela de URLs-->
-          <div class='table-url'>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">URLs</th>
-                </tr>
-              </thead>
-              <tbody id="linkArea"></tbody>  
-            </table>
-          </div> 
+    </div>
+    <div class="form-group">
+      <div class="col-md-6 offset-md-3">
+        <label> Cross Domain Tester: </label><br />
+        <input
+          type="text"
+          id="url"
+          class="form-control"
+          placeholder="URL"
+        /><br />
+        <button
+          type="button"
+          class="insertThings btn btn-outline-warning"
+          id="Insert Link"
+          onclick="appendLink()"
+        >
+          Insert Link
+        </button>
+        <br /><br />
+        <!--Tabela de URLs-->
+        <div class="table-url">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">URLs</th>
+              </tr>
+            </thead>
+            <tbody id="linkArea"></tbody>
+          </table>
         </div>
       </div>
-      <div>
-        
-      </div>
     </div>
-</html>
-
+  </div>
+</body>

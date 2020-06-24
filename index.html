@@ -2,29 +2,25 @@
 
 <head>
   <link rel="shortcut icon" href="./favicon.ico">
-  <script>
-    window.dataLayer = window.dataLayer || [];
-  </script>
-  <!-- Anti-flicker snippet (recommended)  -->
+  <!-- Anti-flicker snippet (recommended) 
    <style>.async-hide { opacity: 0 !important} </style>
   <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
   h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
   })(window,document.documentElement,'async-hide','dataLayer',4000,
   {'OPT-5K62ZWD':true});
-  </script>
+  </script> -->
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1, shrink-to-fit=no"
   />
-  <script src="scripts/main.js"></script>
   <title>
     Testing Area
   </title>
   <script>
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({ event: "teste", arr: [{ obj1: 123, obj2: "abc" }] });
-  </script>
+    </script>
   <link rel="stylesheet" href="styles/style.css" />
 </head>
 
@@ -32,32 +28,33 @@
   <section class="container main">
     <!-- <h1>Utilizado por mim, configurado por Deus</h1> -->
     <div class="content">
-      <a id="daily-reflection" style="font-size: 18px;">Lero Lero</a><br /><br />
-      <button onclick="lerolero(normal)">Lero Lero Normal</button>
-      <button onclick="lerolero(tech)">Lero Lero Tecnológico</button>
-      <br /><br /><br />
       <div>
+        <a id="daily-reflection" class="quotation">Lero Lero</a>
+      </div>
+      <div class="leroButtons">
+        <button id="normalLero">Lero Lero Normal</button>
+        <button id="techLero">Lero Lero Tecnológico</button>
+      </div>
+      <div class="links">
+        <a href="/gerador-cpf/">Gerador de CPF</a>
+        
+        
         <a href="/conversion-area/">Área de conversões</a>
-      </div>
-      <br />
-      <div>
+        
+        
         <a href="/custom-conversions/">Área de conversões personalizadas</a>
-      </div>
-      <br />
-      <div>
+        
+        
         <a href="/testing-area/">Área de Testes</a>
-      </div>
-      <br />
-      <div>
+        
+        
         <a href="/forms-area/">Área de Formulários (work in progress)</a>
-      </div>
-      <br />
-      <div>
+        
+        
         <a href="/data-layer-tests/"
-          >Área de testes de dataLayer (work in progress)</a
+        >Área de testes de dataLayer (work in progress)</a
         >
       </div>
-      <br />
     </div>
     <footer id="footer">
       <h2>Esse é um site de TESTES, favor não fuçar em nada</h2>
@@ -75,6 +72,7 @@
     </footer>
   </section>
 </body>
+<script src="scripts/main.js"></script>
 <script>
   lerolero(normal);
 </script>

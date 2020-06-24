@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+  <title>Gerador de CPF</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+  <script src="../scripts/main.js"></script>
+  <link rel="stylesheet" href="../styles/style.css" />
+</head>
+<body>
+  <section class="container main">
+    <div class="content">
+      <h1>Área de testes</h1>
+
+      <label for="cpf"> CPF: </label><br />
+      <input id="cpf" class="form-control" placeholder="000.000.000-00"/
+      maxlength="14">
+      <button
+        type="button"
+        class="insertThings btn btn-outline-success"
+        id="Load Script"
+        onclick="createCpf()"
+      >
+        Generate
+      </button>
+    </div>
+  </section>
+</body>
