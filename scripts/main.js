@@ -59,17 +59,17 @@ function appendLink() {
 }
 
 function addToCart() {
-  let tbodyLink = document.getElementById("productArea");
-  let prodId = document.getElementById("productId").value;
-  let prodName = document.getElementById("productName").value;
-  let prodPrice = Number(document.getElementById("productPrice").value);
-  let prodQuantity = Number(document.getElementById("productQuantity").value);
-
-  let productId = document.createElement("td");
-  let productName = document.createElement("td");
-  let productPrice = document.createElement("td");
-  let productQuantity = document.createElement("td");
-  let column = document.createElement("tr");
+  let tbodyLink = document.getElementById('productArea'),
+		prodId = document.getElementById('productId').value,
+		prodName = document.getElementById('productName').value,
+		prodPrice = Number(document.getElementById('productPrice').value),
+		prodQuantity = Number(document.getElementById('productQuantity').value),
+		productId = document.createElement('td'),
+		productName = document.createElement('td'),
+		productPrice = document.createElement('td'),
+		productQuantity = document.createElement('td'),
+		column = document.createElement('tr'),
+		userId = document.getElementById('userId').value;
 
   if (prodId && prodPrice && prodName && prodQuantity) {
     productId.innerText = prodId;
@@ -84,6 +84,7 @@ function addToCart() {
     tbodyLink.append(column);
 
     dataLayer.push({
+      userId,
       event: "Add To Cart",
       id: prodId,
       name: prodName,
@@ -101,14 +102,16 @@ function addToCart() {
 
 function purchase() {
   window.dataLayer = window.dataLayer || [];
-  let transactionId = document.getElementById("transactionId").innerText;
-  let revenue = purchaseItems.reduce(
+  let transactionId = document.getElementById("transactionId").innerText,
+      userId = document.getElementById("userId").value,
+      revenue = purchaseItems.reduce(
     (acc, prod) => (acc += prod.price * prod.quantity),
     0
   );
   if (purchaseItems.length > 0) {
     dataLayer.push({
       event: "purchaseReady",
+      userId,
       ecommerce: {
         purchase: {
           actionField: {
