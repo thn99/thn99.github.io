@@ -125,7 +125,7 @@ function purchase() {
   }
   purchaseItems = [];
   //createTransactionId();
-  window.location.reload();
+  //window.location.reload();
 }
 
 function createTransactionId() {
