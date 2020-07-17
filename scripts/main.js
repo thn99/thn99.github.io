@@ -490,11 +490,12 @@ function cpf() {
         ? originalNumbers[number] + "-"
         : originalNumbers[number];
   });
-  console.log(finalCpf);
   return finalCpf;
 }
 
 function createCpf() {
   let cpfValue = cpf();
   document.getElementById("cpf").value = cpfValue;
+  document.getElementById("cpf").select();
+  document.execCommand("copy");
 }
