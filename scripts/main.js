@@ -498,4 +498,7 @@ function createCpf() {
   document.getElementById("cpf").value = cpfValue;
   document.getElementById("cpf").select();
   document.execCommand("copy");
+  dataLayer.push({
+    event: 'createCpf'
+  });
 }
