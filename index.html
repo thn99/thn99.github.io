@@ -1,4 +1,39 @@
 <!DOCTYPE html>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.pushStashed = window.dataLayer.push;
+  Object.defineProperty(window.dataLayer, 'push', {
+    set(y) {
+      this.pushStashed = y;
+      Object.defineProperty(this, 'push', {
+        writable: true,
+        value: function() {
+          arguments = [].map.call(arguments, function(event) {
+            if (event && event["gtm.element"]) {
+              event.dataContext = {}, elem = event["gtm.element"];
+              for (; elem && elem !== document; elem = elem.parentNode) {
+                [].forEach.call(elem.attributes, function(attr) {
+                  if (/^data-/.test(attr.name)) {
+                    var camelCaseName = attr.name.substr(5).replace(/-(.)/g, function($0, $1) {
+                      return $1.toUpperCase();
+                    });
+                    event.dataContext[camelCaseName] = event.dataContext[camelCaseName] || attr.value;
+                  }
+                });
+              }
+            }
+            return event;
+          });
+          return this.pushStashed.apply(null,arguments);
+        }
+      });
+    },
+    get() {
+      return this.pushStashed
+    },
+    configurable: true
+  });
+</script>
 
 <head>
   <meta name="google-site-verification" content="v1u_ecg3vF3UnfX0Z0JzRwOG6gAJly0ZnGI8nhGSomM" />
